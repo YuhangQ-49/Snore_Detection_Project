@@ -3,11 +3,11 @@ import shutil
 from sklearn.model_selection import train_test_split
 
 
-snoring_dir = 'data/1'
-non_snoring_dir = 'data/0'
+snoring_dir = '../data/1'
+non_snoring_dir = '../data/0'
 
-train_dir = 'data/train'
-test_dir = 'data/test'
+train_dir = '../data/train'
+test_dir = '../data/test'
 
 os.makedirs(os.path.join(train_dir, 'snoring'), exist_ok=True)
 os.makedirs(os.path.join(train_dir, 'non-snoring'), exist_ok=True)

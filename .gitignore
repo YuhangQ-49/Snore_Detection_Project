@@ -1,0 +1,17 @@
+# 不上传数据
+Snore_Detection/data/
+
+# 不上传模型和权重
+Snore_Detection/models/
+
+# 不上传日志
+Snore_Detection/logs/
+Snore_Detection/src/logs/
+
+# 不上传缓存
+Snore_Detection/src/__pycache__/
+__pycache__/
+
+# 不上传模型文件
+*.h5
+*.keras

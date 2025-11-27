@@ -1,9 +1,10 @@
-This project is focused on detecting snoring sounds from audio recordings using machine learning techniques. The dataset includes labeled audio samples of snoring and non-snoring sounds, and the project involves preprocessing the audio data, extracting features, training a machine learning model, evaluating its performance, and real-time detection with vibration alerts.
+## This project is focused on detecting snoring sounds from audio recordings using machine learning techniques. The dataset includes labeled audio samples of snoring and non-snoring sounds, and the project involves preprocessing the audio data, extracting features, training a machine learning model, evaluating its performance, and real-time detection with vibration alerts.
 
-Project Structure
+## Project Structure
+
 The project is structured as follows:
 ===========================================================================================================
-.
+```
 ├── data/
 │   ├── 0/  # Folder containing non-snoring audio files
 │   ├── 1/  # Folder containing snoring audio files
@@ -34,8 +35,9 @@ The project is structured as follows:
 ├── README.md  # Project documentation
 └── requirements.txt
 ===========================================================================================================
+```
 
-Dataset
+### Dataset
 The dataset consists of two folders:
 
 data/1/: Contains 500 snoring audio files, each 1 second long.
@@ -49,7 +51,7 @@ The snoring sounds were collected from the following online sources:
 - Fesliyan Studios - Snoring
 - YouTube - Snoring
 
-Project Workflow
+### Project Workflow
 
 1. Data Preprocessing
 The first step is to split the dataset into training and testing sets. The script split_dataset.py handles this task:
@@ -90,7 +92,7 @@ Method 2: Full-Featured Program
 ==> python src/realtime/realtime_main.py --vibration-controller simulated
 This program supports all configuration options via command-line arguments.
 
-Real-Time Detection Features:
+### Real-Time Detection Features:
 - Real-time audio capture from microphone
 - Continuous snoring detection using the trained model
 - Vibration alerts when snoring is detected (supports Raspberry Pi GPIO, Arduino, or simulated mode)
@@ -98,7 +100,7 @@ Real-Time Detection Features:
 - Sliding window processing with overlap for smooth detection
 - Continuous detection counting to reduce false positives
 
-Real-Time Detection Parameters:
+### Real-Time Detection Parameters:
 - --threshold: Prediction threshold (0-1, default 0.5)
 - --chunk-duration: Audio window duration in seconds (default 1.0)
 - --overlap: Window overlap ratio (0-1, default 0.5)
@@ -112,7 +114,7 @@ ____________________________________________________________________
 A pipeline main.py can also be used to run all the programs at once. But, currently, its not functional so, try to run every program manually.
 ____________________________________________________________________
 
-Configuration
+### Configuration
 All configuration settings (e.g., paths, audio processing parameters, training parameters) are stored in config.py. You can modify this file to change the sample rate, number of MFCCs, batch size, number of epochs, learning rate, and other settings.
 
 How to Use
@@ -143,7 +145,7 @@ How to Use
    Or with custom parameters:
    ==> python src/realtime/realtime_main.py --threshold 0.6 --chunk-duration 0.5 --vibration-controller simulated
 
-Real-Time Detection Setup:
+### Real-Time Detection Setup:
 
 For Raspberry Pi:
 - Install RPi.GPIO library: pip install RPi.GPIO
@@ -161,7 +163,7 @@ For Testing (Simulated Mode):
 - Run: python src/realtime/start_monitoring.py
 - Or: python src/realtime/realtime_main.py --vibration-controller simulated
 
-Results
+### Results
 The final model performance will be printed after running the evaluate.py script. This includes metrics like accuracy, precision, recall, and F1-score.
 
 For real-time detection, the system displays:
@@ -169,13 +171,3 @@ For real-time detection, the system displays:
 - Snoring probability values
 - Continuous detection count
 - Vibration trigger notifications
-
-Future Work
-Potential improvements for the project include:
-
-- Data Augmentation: Implementing data augmentation techniques to increase the diversity of training data.
-- Hyperparameter Tuning: Fine-tuning the model's hyperparameters for better performance.
-- Model Optimization: Exploring more advanced architectures or techniques such as transfer learning.
-- Real-Time Performance: Optimizing real-time detection latency and CPU usage.
-- Hardware Integration: Enhanced support for various vibration motors and haptic feedback devices.
-- Mobile App: Developing a mobile application for portable snoring detection.
